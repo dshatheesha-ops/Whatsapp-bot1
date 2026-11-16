@@ -1,0 +1,12 @@
+services:
+  novawa-bot:
+    build: .
+    container_name: novawa-whatsapp-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./auth_info_baileys:/app/auth_info_baileys
+      - ./session_meta:/app/session_meta
